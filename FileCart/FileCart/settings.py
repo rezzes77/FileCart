@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'products',
     'orders',
-    'payments',
+    # 'payments',
     'reviews',
     'promocode',
     'users',
@@ -56,7 +56,28 @@ INSTALLED_APPS = [
     'drf_yasg',
     'drf_spectacular',
     # 'drf_spectacular_sidecar',
+    # 'smtp',
+
 ]
+
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'abdugood03@gmail.com'
+EMAIL_HOST_PASSWORD = 'coqi xvvj gvzo qflj'
+
+DJOSER = {
+    'PASSWORD_RESET_CONFIRM_URL': 'password-reset-confirm/{uid}/{token}/',
+    'SEND_ACTIVATION_EMAIL': False,
+    'SET_PASSWORD_RETYPE': True,
+    'PASSWORD_RESET_SHOW_EMAIL_NOT_FOUND': True,
+    "USERNAME_RESET_CONFIRM_URL": "reset-username-confirm/{uid}/{token}/",
+    "USERNAME_RESET_SHOW_EMAIL_NOT_FOUND": True,
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -149,10 +170,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-TWILIO_ACCOUNT_SID = 'your_account_sid'
-TWILIO_AUTH_TOKEN = 'your_auth_token'
-TWILIO_PHONE_NUMBER = '+996707547539'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

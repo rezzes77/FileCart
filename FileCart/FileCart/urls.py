@@ -38,11 +38,11 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api1/', include('products.urls')),
-    path('api2/', include('orders.urls')),
-    path('api3/', include('reviews.urls')),
-    path('api4/', include('users.urls')),
-    path('api5/', include('payments.urls')),
+    path('api-products/', include('products.urls')),
+    path('api-orders/', include('orders.urls')),
+    path('api-reviews/', include('reviews.urls')),
+    path('api-users/', include('users.urls')),
+    path('api-promocodes/', include('promocode.urls')),
     re_path(r'^auth/', include('djoser.urls')),
     re_path(r'^auth/', include('djoser.urls.authtoken')),
     path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
