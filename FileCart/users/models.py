@@ -5,7 +5,7 @@ from django.core.exceptions import ValidationError
 import random
 
 def validate_avatar_size(value):
-    max_size_kb = 500
+    max_size_kb = 3000
     if value.size > max_size_kb * 1024:
         raise ValidationError(f"Размер файла слишком велик. Максимально: {max_size_kb}KB.")
 

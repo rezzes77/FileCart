@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtualenv
+venv/
+env/
+*.env
+
+# Logs
+*.log
+logs/
+debug.log
+
+# Django
+media/
+staticfiles/
+*.dump
+*.sql
+
+# IDEs
+.idea/
+
+# OS файлы
+.DS_Store
+Thumbs.db
